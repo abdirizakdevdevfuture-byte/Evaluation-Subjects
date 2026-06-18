@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="so">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard</title>
+  <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='images/TOP_logo.svg') }}">
+  <link rel="stylesheet" href="{{ url_for('Admin_bp.static', filename='admin.css') }}">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <img class="navbar-logo" src="{{ url_for('static', filename='images/TOP_logo.svg') }}"
+        alt="Truth of Programming logo" />
+      <ul class="navbar-links">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#Users">Users</a></li>
+        <li><a href="#Evaluators">Evaluators</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="dash-wrapper">
+
+    <h1 class="welcome-title">Welcome Admin <span class="admin-name">Abdirizak</span></h1>
+
+    <h2 class="dash-title">Admin Dashboard — All Table Information</h2>
+
+    <!-- Users Table -->
+    <div class="section" id="Users">
+      <h3 class="section-title">
+        All User Accounts
+        <span class="badge">Users</span>
+      </h3>
+      <div class="table-wrapper">
+        <table>
+        <thead>
+          <tr>
+            <th>User_id</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Password</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {% for u in users %}
+          <tr>
+            <td>{{ u.id }}</td>
+            <td>{{ u.username }}</td>
+            <td>{{ u.email }}</td>
+            <td>hidden</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Evaluators Table -->
+    <div class="section" id="Evaluators">
+      <h3 class="section-title">
+        Evaluators
+        <span class="badge">Courses</span>
+      </h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th> UserID </th>
+              <th>Subjec_id</th>
+              <th>AIT</th>
+              <th>AAD</th>
+              <th>RM</th>
+              <th>DCCN</th>
+              <th>ESD</th>
+              <th>DE</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for sub in SubVotes %}
+            <tr>
+              <td> {{ sub.user_id }} </td>
+              <td> {{ sub.subject_id }} </td>
+              <td> {{ sub.ait }} </td>
+              <td> {{sub.aad}} </td>
+              <td> {{ sub.rm }} </td>
+              <td> {{ sub.dccn }} </td>
+              <td> {{ sub.esd }} </td>
+              <td> {{ sub.de }} </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="dash-footer">
+      <div id="disclaimer">
+        <p class="disclaimer-text">
+          <span class="dis-span">Disclaimer:</span>
+          Platform-kan waa project madaxbanaan oo ay sameeyeen arday,
+          mana matalanto aragtida, siyaasadda, ama xaaladaha rasmi ah ee
+          [Mogadishu University]. Ka qaybgalku waa ikhtiyaari, jawaabahdana
+          waxaa loo ururiyaa ujeeddooyinka cilmi-baarista akadeemiga ee shakhsiga ah.
+        </p>
+      </div>
+      <p class="copyright">
+        &copy; 2026 Truth of Programming Survey. All rights reserved.
+      </p>
+    </footer>
+
+  </div>
+
+</body>
+
+</html>

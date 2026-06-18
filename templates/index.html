@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+  <title>{% block title %}Evaluation subjects{% endblock %}</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='images/TOP_logo.svg') }}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+  {% block head %}  {% endblock%}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+  {% block content %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <img class="navbar-brand w-25 " src="{{ url_for('static', filename='images/TOP_logo.svg') }}" alt="Truth of Programming logo">
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li class="active"><a href="#disclaimer">disclaimer</a></li>
+      <li><a href="#">sing_up</a></li>
+      <li><a href=" {{ url_for('auth.sing_up' ) }} ">Login</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container Home-page">
+  <div class="home-grid">
+    <div class="welcome-side">
+      <h3>salan sare ardayda fasalka, ku soo dhowaada qiimeynta maadooyinka</h3>
+      <p>Si aad u bilowdo, fadlan raac tilmaamahan. Buuxi foomkan si aad u sameysato akoon kadibna u gasho. Xusuusnow email-ka iyo password-ka aad ku sameysatay akoonka.</p>
+    </div>
+
+    <div class="form-side">
+    <div class="account-card">
+      <h1>Fadlan sameyso akoon, xusuusnaw <span class="highlight-text">email-ka iyo -ka</span>. Mar dambe waxaad u baahan doontaa email-ka iyo -ka si aad u gasho.</h1>
+      <form class="form-group" action=" {{ url_for('auth.create_account' ) }} " method="post">
+        <label for="username">Magaca isticmaalaha:</label>
+        <input type="text" id="username" name="username" required="required">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required="required">
+        <label for="password">password:</label>
+        <input type="password" id="password" name="password" required="required"  >
+        <button type="submit">Create Account</button>
+      </form>
+    </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div id="disclaimer">
+    <p class="disclaimer-text">
+    <span class="dis-span">Disclaimer</span> >: platform-kan waa project madaxbanaan oo ay sameeyeen arday, 
+    mana matalanto aragtida, siyaasadda, ama xaaladaha rasmi ah ee 
+    [mogadishu university]. Ka qaybgalku waa ikhtiyaari, jawaabahdana 
+    waxaa loo ururiyaa ujeeddooyinka cilmi-baarista akadeemiga ee shakhsiga ah.
+  </p>
+  </div>
+  <p class="copyright">
+    &copy; 2026 Truth of programming-SUrvey. all right reserved.
+  </p>
+</footer>
+
+{% endblock %}
+</body>
+</html>

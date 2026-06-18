@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.login-title {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: rgba(0, 0, 224, 0.7);
+    margin-bottom: 15px;
+    margin-top: 12%;
+}
+
+.login-card {
+    width: 90%;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 25px;
+    background-color: rgba(0, 195, 255, 0.15);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.form-login {
+    width: 100%;
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+    .login-title {
+        font-size: 1.3rem;
+    }
+
+    .login-card {
+        width: 95%;
+        padding: 15px;
+    }
+}

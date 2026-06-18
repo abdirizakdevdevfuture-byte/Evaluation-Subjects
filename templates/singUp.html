@@ -1,0 +1,73 @@
+{% extends "index.html" %}
+
+{% block title %}
+Login page
+{% endblock %}
+
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/singUp.css') }}">
+
+{% endblock%}
+
+
+{% block content %}
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <img class="navbar-brand w-25 " src="{{ url_for('static', filename='images/TOP_logo.svg') }}" alt="Truth of Programming logo">
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Back-home</a></li>
+      <li><a href="#Longin ">Login</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+
+
+
+    <!-- FLASH MESSAGES -->
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="alert alert-{{ 'danger' if category == 'error' else 'success' }}">
+                {{ message }}
+            <button type="button" onclick="this.closest('.alert').remove()">✕</button>
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+    <!-- LOGIN CARD -->
+     <div class="login-title">
+        <p>waa midkan Login page-ka Email-kii iyo password hada soo Abuurtay gali</p>
+     </div>
+    <div class="login-card">
+        <div class="form-login">`
+            <h1>Login now</h1>
+            <form method="POST" action=" {{ url_for('auth.sing_up' ) }} ">
+                <div class="mb-3">
+                    <label for="email" id="email" class="form-label">Email-kaga
+                        <input type="email" class="form-control" name="email" required>
+                    </label>
+                </div>
+                <div class="mb-3">
+                    <label for="password" id="password" class="form-label"> password-kaga
+                        <input type="password" class="form-control" name="password" required>
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">
+                    Login
+                </button>
+            </form>
+        </div>
+    </div>
+   
+
+
+
+    {% endblock %}

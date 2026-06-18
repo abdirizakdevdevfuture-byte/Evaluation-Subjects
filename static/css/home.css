@@ -1,0 +1,197 @@
+body {
+  background: #f4f7fb;
+  color: #1f2937;
+  font-family: Arial, sans-serif;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  margin-bottom: 0;
+  border: 0;
+  border-radius: 0;
+  background: #ffffff;
+  box-shadow: 0 2px 14px rgba(31, 41, 55, 0.08);
+}
+
+.navbar-brand {
+  height: 52px;
+  padding: 8px 15px;
+  object-fit: contain;
+}
+
+.Home-page {
+  min-height: calc(100vh - 52px);
+  display: flex;
+  align-items: center;
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.home-grid {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.welcome-side,
+.form-side {
+  flex: 1 1 0;
+}
+
+.welcome-side {
+  max-width: 540px;
+}
+
+.welcome-side h3 {
+  margin-top: 0;
+  margin-bottom: 18px;
+  font-size: 34px;
+  line-height: 1.25;
+  font-weight: 700;
+  color: #111827;
+}
+
+.welcome-side p {
+  max-width: 470px;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #4b5563;
+}
+
+.account-card {
+  max-width: 460px;
+  margin-left: auto;
+  padding: 28px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 18px 45px rgba(31, 41, 55, 0.12);
+}
+
+.account-card h1 {
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-size: 22px;
+  line-height: 1.4;
+  font-weight: 700;
+  color: #111827;
+}
+
+.highlight-text {
+  color: #2563eb;
+}
+
+.account-card label {
+  margin-top: 12px;
+  color: #374151;
+  font-weight: 600;
+}
+
+.account-card input {
+  width: 100%;
+  height: 42px;
+  margin-top: 6px;
+  padding: 8px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+}
+
+.account-card button {
+  width: 100%;
+  margin-top: 22px;
+  padding: 11px 16px;
+  border: 0;
+  border-radius: 6px;
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+@media (max-width: 767px) {
+  .Home-page {
+    display: block;
+    min-height: auto;
+    padding-top: 28px;
+    padding-bottom: 32px;
+  }
+
+  .home-grid {
+    display: block;
+  }
+
+  .welcome-side,
+  .form-side {
+    width: 100%;
+  }
+
+  .welcome-side {
+    max-width: none;
+    margin-bottom: 28px;
+  }
+
+  .welcome-side h3 {
+    font-size: 28px;
+  }
+
+  .welcome-side p {
+    font-size: 16px;
+  }
+
+  .account-card {
+    max-width: none;
+    margin-left: 0;
+    padding: 22px;
+  }
+}
+
+
+footer {
+  background-color: #0024f1;
+  border-top: 1px solid #e5e7eb;
+  padding: 24px 16px;
+  text-align: center;
+}
+
+#disclaimer {
+  max-width: 700px;
+  margin: 0 auto 12px auto;
+}
+
+.disclaimer-text {
+  font-size: 1.2rem;
+  color: white;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.copyright {
+  font-size: 1.2rem;
+  color: white;
+  margin: 0;
+}
+
+.dis-span{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  color: yellow;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  footer {
+    padding: 20px 12px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .disclaimer-text,
+  .copyright {
+    font-size: 1.3rem;
+  }
+}

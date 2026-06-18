@@ -1,0 +1,110 @@
+{% extends "index.html" %}
+
+
+{% block title %}
+Login page
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/evaluation.css') }}">
+
+{% endblock%}
+
+
+{% block content %}
+<nav class="navbar nav">
+    <ul>
+        <li class="nav-items">
+            <a class="nav-links" href="#home">Home</a>
+            <a class="nav-links" href="#evaluation">evaluation</a>
+            <a class="nav-link" href="#Logout">Logout</a>
+        </li>
+    </ul>
+    <h1 class="text-welcome"> welcome {{ username }} </h1>
+</nav>
+
+<!--flashing success message-->
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+      <div class="alert alert-{{ 'danger' if category == 'error' else 'success' }} alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" onclick="this.closest('.alert').remove()">✕</button>
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+
+<!--where the form starts-->
+
+<div class="evaluation-section">
+    <h3>hadaa meshan soo qaartay waaku madsantay form hoose qiimaynta buuxi </h3>
+</div>
+
+<div class="form-eveluation">
+    <form action="  {{ url_for('Admin_bp.evaluators' ) }} " method="post">
+
+        <label for="ait">qiimay madad Guutale (ait)
+            <select name="ait" id="ait" required>
+                <option value="">-- Dooro jawaabtaada --</option>
+                <option value="muhiim katahy">Programming: muhiim katahy</option>
+                <option value="muhiim & jeclahy">Muhiim & waan jeclahy</option>
+                <option value="waa adeeg">Fahankeeda: waa adeeg</option>
+                <option value="majecli">Muhiim ma aha & majecli</option>
+            </select>
+        </label>
+
+        <label for="aad">qiimay madada Ustaad Abdulle (AAD)
+            <select name="aad" id="aad" required>
+                <option value="">-- Dooro jawaabtaada --</option>
+                <option value="wuu adegyahy">Fahankeeda: wuu adegyahy</option>
+                <option value="algorithm muhiim">Algorithm: muhiim katahy</option>
+                <option value="majecli">Aniga majecli</option>
+                <option value="waan jeclaa">Ani waan jeclaa</option>
+            </select>
+        </label>
+
+        <label for="rm">qiimay madaada labaad Ustaad Abdulle (rm)
+            <select name="rm" id="rm" required>
+                <option value="">-- Dooro jawaabtaada --</option>
+                <option value="research muhiim">Research: barashada muhiim utahy</option>
+                <option value="muhiim ima ahan">Aniga muhiim ima ahan</option>
+                <option value="way adkayd">Way igu adkayd</option>
+            </select>
+        </label>
+
+        <label for="dccn">qiimay madada ustaad Abdijibaar (dccn)
+            <select name="dccn" id="dccn" required>
+                <option value="">-- Dooro jawaabtaada --</option>
+                <option value="networking muhiim">Networking: muhiim bay ii ahyd</option>
+                <option value="muhiim majecli">Muhiim lakin majecli</option>
+                <option value="way adkaa">Fahankeeda: wuu adkaa</option>
+            </select>
+        </label>
+
+        <label for="esd">wax kuqiimay madada Ustaad Caamir (ESD)
+            <select name="esd" id="esd" required>
+                <option value="">-- Dooro jawaabtaada --</option>
+                <option value="developer muhiim">Software dev: muhiim i hayd</option>
+                <option value="muhiim adkayd">Muhiim lakin way adkayd</option>
+                <option value="igu adkaa">Fahankeeda: igu adkaa</option>
+                <option value="ii fududaa">Fahankeeda: ii fududaa</option>
+            </select>
+        </label>
+
+        <label for="de">qiimay madada Ustaad Mad-mad (DE)
+            <select name="de" id="de" required>
+                <option value="">-- Dooro jawaabtaada --</option>
+                <option value="way fududayd">Xisaabta: way ii fududayd</option>
+                <option value="ima fududayn">Ima fududayn</option>
+                <option value="technology">Technology: lagu isticmaalaa</option>
+            </select>
+        </label>
+
+        <button class="btn btn-primary" type="submit">Submit</button>
+
+    </form>
+</div>
+
+{% endblock %}

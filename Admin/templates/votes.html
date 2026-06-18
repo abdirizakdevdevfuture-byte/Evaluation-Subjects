@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Votes</title>
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='images/TOP_logo.svg') }}">
+    <style>
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        th { background: #4a90e2; color: white; }
+        tr:nth-child(even) { background: #f2f2f2; }
+    </style>
+</head>
+<body>
+
+<h2>All Votes</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Subject_id</th>
+            <th>User ID</th>
+            <th>AIT</th>
+            <th>AAD</th>
+            <th>RM</th>
+            <th>DCCN</th>
+            <th>ESD</th>
+            <th>DE</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for vote in votes %}
+        <tr>
+            <td>{{ vote.subject_id }}</td>
+            <td>{{ vote.user_id }}</td>
+            <td>{{ vote.ait }}</td>
+            <td>{{ vote.aad }}</td>
+            <td>{{ vote.rm }}</td>
+            <td>{{ vote.dccn }}</td>
+            <td>{{ vote.esd }}</td>
+            <td>{{ vote.de }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+</body>
+</html>
