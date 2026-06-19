@@ -18,11 +18,7 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/reset-db-xyz123')
-def reset_db():
-    db.drop_all()
-    db.create_all()
-    return "Database reset done!"
+
 
 
 if __name__ == '__main__':
